@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.customers;
+package org.springframework.samples.petclinic.customers.model;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
+ * Repository class for <code>Owner</code> domain objects All method names are compliant with Spring Data naming
+ * conventions so this interface can easily be extended for Spring Data See here: http://static.springsource.org/spring-data/jpa/docs/current/reference/html/jpa.repositories.html#jpa.query-methods.query-creation
+ *
+ * @author Ken Krebs
+ * @author Juergen Hoeller
+ * @author Sam Brannen
+ * @author Michael Isvy
  * @author Maciej Szarlinski
  */
-@EnableDiscoveryClient
-@SpringBootApplication
-public class CustomersServiceApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(CustomersServiceApplication.class, args);
-	}
-}
+public interface OwnerRepository extends JpaRepository<Owner, Integer> { }
